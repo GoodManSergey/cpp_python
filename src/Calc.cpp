@@ -1,11 +1,13 @@
 #include <boost/python.hpp>
+#include <math.h>
 #include <Python.h>
 
 
 boost::python::list get_simple(unsigned long long int value) {
     boost::python::list result_list;
     unsigned long long int number = 2;
-    while (value >= number) {
+    unsigned long long int border = sqrt(value);
+    while (border > number) {
         if (value % number == 0) {
             result_list.append(number);
             value /= number;
@@ -15,6 +17,8 @@ boost::python::list get_simple(unsigned long long int value) {
             continue;
         }
     }
+    if (value != 1)
+        result_list.append(value);
     return result_list;
 }
 
