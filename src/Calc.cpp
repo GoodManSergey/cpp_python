@@ -11,6 +11,7 @@ boost::python::list get_simple(unsigned long long int value) {
         if (value % number == 0) {
             result_list.append(number);
             value /= number;
+            border = sqrt(value);
             continue;
         } else {
             number++;
