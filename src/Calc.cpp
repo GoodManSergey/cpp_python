@@ -1,10 +1,7 @@
 #include <boost/python.hpp>
 #include <Python.h>
 
-int main()
-{
 
-}
 boost::python::list get_simple(unsigned long long int value) {
     boost::python::list result_list;
     unsigned long long int number = 2;
